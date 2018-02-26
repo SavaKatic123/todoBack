@@ -13,12 +13,18 @@ class Task extends Model
    * @var array
    */
   protected $fillable = [
-      'user_id', 'name', 'desc', 'done', 'priority'
+      'user_id', 'name', 'desc', 'is_done', 'is_important'
+  ];
+
+  protected $attributes = [
+    'is_done' => false,
+    'is_important' => false
   ];
 
 
-  public function user() {
-    return $this->belongsTo('App\User');
+  public function user() 
+  {
+    return $this->belongsTo(User::class);
   }
 
 }

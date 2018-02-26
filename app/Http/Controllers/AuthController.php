@@ -32,7 +32,7 @@ class AuthController extends Controller
         
         $token = null;
         try {
-            if (! $user) {
+            if (!$user) {
                 return response()->json(['error' => 'Unregistered'], 403);
             }
             $token = JWTAuth::fromUser($user);

@@ -14,7 +14,7 @@ class AddDoneColumnToTasks extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->boolean('done');
+            $table->boolean('is_done');
         });
     }
 
@@ -26,7 +26,7 @@ class AddDoneColumnToTasks extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('done');
+            $table->dropColumn('is_done');
         });
     }
 }

@@ -28,12 +28,13 @@ Route::group([
   Route::post('logout', 'AuthController@logout');
   Route::post('refresh', 'AuthController@refresh');
   Route::post('me', 'AuthController@me');
-  Route::post('/tasks', 'TasksController@getTasks');
+  Route::post('/register', 'Auth\RegisterController@create');
+  
 });
 
-Route::post('/users', 'Auth\RegisterController@create');
-Route::post('/newTask', 'TasksController@newTask');
-Route::post('/changeTask', 'TasksController@changeTask');
-Route::post('/deleteTask', 'TasksController@deleteTask');
-Route::post('/finishTask', 'TasksController@finishTask');
-Route::post('/changePriority', 'TasksController@changePriority');
+
+Route::resource('tasks', 'TaskController')->middleware('auth:api');
+
+
+Route::get('/read', 'TaskController@read');
+

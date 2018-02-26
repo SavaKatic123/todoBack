@@ -14,7 +14,7 @@ class AddPriorityColumnToTasks extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->boolean('priority');
+            $table->boolean('is_important');
         });
     }
 
@@ -26,7 +26,7 @@ class AddPriorityColumnToTasks extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('priority');
+            $table->dropColumn('is_important');
         });
     }
 }
