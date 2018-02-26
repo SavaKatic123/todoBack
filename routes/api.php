@@ -36,5 +36,4 @@ Route::group([
 Route::resource('tasks', 'TaskController')->middleware('auth:api');
 
 
-Route::get('/read', 'TaskController@read');
 

@@ -20,6 +20,7 @@ class TaskController extends Controller
     public function index()
     {
         //
+        return Auth::user()->tasks; 
     }
 
     /**
@@ -105,6 +106,6 @@ class TaskController extends Controller
 
     public function read() 
     { 
-      return Auth::user()->tasks; 
+      
     }
 }
